@@ -20,7 +20,7 @@
     </div>
   @endif
 
-  <form action="{{ route('products.store') }}" method="POST">
+  <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <table>
       <tr>
@@ -44,6 +44,12 @@
               <option value="{{ $vendor_code }}">{{ $vendor_code }}</option>
             @endforeach
           </select>
+        </td>
+      </tr>
+      <tr>
+        <th>画像</th>
+        <td>
+          <input type="file" name="image">
         </td>
       </tr>
     </table>
